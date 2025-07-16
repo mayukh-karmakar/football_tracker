@@ -32,20 +32,20 @@ A simple web application built using **Flask** and **MySQL** that allows users t
 ### 🔃 Step-by-step:
 
 ```bash
-# 1. Clone the repository
+ 1. Clone the repository
 git clone https://github.com/mayukh-karmakar/football_tracker.git
 cd football_tracker
 
-# 2. Install Flask
+2. Install Flask
 pip install flask
 
-# 3. Set up MySQL
-# - Create a database named `football_db`
-# - Import the SQL file if available (e.g., `football_db.sql`)
-# OR manually create tables based on your app.py logic
+3. Set up MySQL
+- Create a database named `football_db`
+- Import the SQL file if available (e.g., `football_db.sql`)
+OR manually create tables based on your app.py logic
 
-# 4. Run the Flask application
+ 4. Run the Flask application
 python app.py
 
-# 5. Open browser and visit:
+ 5. Open browser and visit:
 http://127.0.0.1:5000/
