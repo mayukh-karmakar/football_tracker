@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Football Player Tracker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        input, select, button {
+            padding: 8px;
+            margin: 5px;
+        }
+        li {
+            margin: 10px 0;
+        }
+        .delete-link {
+            color: red;
+            margin-left: 10px;
+            text-decoration: none;
+        }
+        .filters {
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Football Player Tracker</h1>
+
+    <!-- Add New Player -->
+    <form method="POST" action="/add">
+        <input type="text" name="name" placeholder="Player Name" required>
+        <input type="number" name="age" placeholder="Age" required>
+        <input type="text" name="country" placeholder="Country" required>
+        <input type="text" name="club" placeholder="Club" required>
+        <input type="text" name="position" placeholder="Position" required>
+        <button type="submit">Add Player</button>
+    </form>
+
+    <!-- Filter Form -->
+    <form method="GET" action="/" class="filters">
+        <label>Filter by Country:</label>
+        <select name="country">
+            <option value="">All</option>
+            {% for country in countries %}
+                <option value="{{ country }}">{{ country }}</option>
+            {% endfor %}
+        </select>
+
+        <label>Filter by Club:</label>
+        <select name="club">
+            <option value="">All</option>
+            {% for club in clubs %}
+                <option value="{{ club }}">{{ club }}</option>
+            {% endfor %}
+        </select>
+
+        <button type="submit">Apply Filters</button>
+    </form>
+
+    <!-- Player List -->
+    <h2>Player List</h2>
+    <ul>
+        {% for player in players %}
+            <li>
+                <strong>{{ player[1] }}</strong> ({{ player[2] }} yrs)
+                - {{ player[5] }} | {{ player[4] }} | {{ player[3] }}
+                <a class="delete-link" href="/delete/{{ player[0] }}">[Delete]</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
