@@ -1,0 +1,16 @@
+# Ignore PyCharm and virtual env folders
+.idea/
+.venv/
+
+# Python bytecode
+__pycache__/
+*.pyc
+*.pyo
+
+# Env/config files
+.env
+*.env
+
+# OS files
+.DS_Store
+Thumbs.db
